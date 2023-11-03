@@ -64,20 +64,19 @@ function DisplayIdols() {
                 nextButton.value = 'Next';
                 prevButton.value = 'Previous';
                 image.setAttribute('src', newArr[0].Image);
-                image.style.width = '50%';
-                image.style.height = '50%';
-                nextButton.onclick = function () { nextImage(); };
-                prevButton.onclick = function () { prevImage(); };
+                image.style.width = '400px';
+                image.style.height = '400px';
+                nextButton.onclick = function () { nextImage() };
+                prevButton.onclick = function () { prevImage() };
                 myDiv.appendChild(image);
                 myDiv.appendChild(prevButton);
                 myDiv.appendChild(nextButton);
-                myDiv.innerHTML += '<br>';
                 myDiv.appendChild(newDiv);
                 newDiv.innerHTML = setHTMLforImage(0);
             }
         }
     }
-    httpRequest.open('GET', './Idols.json', true);
+    httpRequest.open('GET', './browser.php?getSelect='+1, true);
     httpRequest.send();
 }
 
@@ -90,14 +89,49 @@ function setHTMLforImage(x) {
 function nextImage() {
     counter++;
     if (counter > newArr.length - 1) counter = 0;
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                //alert(httpRequest.responseText);
+                const data = JSON.parse(httpRequest.responseText);
+                console.log(data);
+                document.getElementById('show').setAttribute('src', data.Image);
+                document.getElementById('hldr').innerHTML = setHTMLforImage(counter);
+            }
+        }
+    }
+    httpRequest.open('GET', './browser.php?getIndex=' + counter + '&getSelect=' + 0, true);
+    httpRequest.send();
+    /*
+    counter++;
+    if (counter > newArr.length - 1) counter = 0;
     let image = document.getElementById('show');
     image.setAttribute('src', newArr[counter].Image);
     newDiv = document.getElementById('hldr');
     newDiv.innerHTML = '';
     newDiv.innerHTML = setHTMLforImage(counter);
+    */
 }
 
 function prevImage() {
+    counter--;
+    if (counter > newArr.length - 1) counter = 0;
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                //alert(httpRequest.responseText);
+                const data = JSON.parse(httpRequest.responseText);
+                console.log(data);
+                document.getElementById('show').setAttribute('src', data.Image);
+                document.getElementById('hldr').innerHTML = setHTMLforImage(counter);
+            }
+        }
+    }
+    httpRequest.open('GET', './browser.php?getIndex=' + counter + '&getSelect=' + 0, true);
+    httpRequest.send();
+    /*
     counter--;
     if (counter < 0) counter = newArr.length - 1;
     let image = document.getElementById('show');
@@ -105,4 +139,5 @@ function prevImage() {
     newDiv = document.getElementById('hldr');
     newDiv.innerHTML = '';
     newDiv.innerHTML = setHTMLforImage(counter);
+    */
 }
