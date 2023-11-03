@@ -1,0 +1,57 @@
+[
+    {
+        "RomajiName": "Haruka Amami",
+        "JapaneseName": "天海春香",
+        "Birthday": "April 3rd",
+        "Age": 17,
+        "Height": "158 cm",
+        "Weight": "46 kg",
+        "BloodType": "O",
+        "ProductionCompany": "765",
+        "Image": "Haruka.png"
+    },
+    {
+        "RomajiName": "Miki Hoshii",
+        "JapaneseName": "星井美希",
+        "Birthday": " November 23rd",
+        "Age": 15,
+        "Height": "161 cm",
+        "Weight": "45 kg",
+        "BloodType": "B",
+        "ProductionCompany": "765",
+        "Image": "Miki.png"
+    },
+    {
+        "RomajiName": "Chihaya Kisaragi",
+        "JapaneseName": "如月千早",
+        "Birthday": "February 25th",
+        "Age": 16,
+        "Height": "162 cm",
+        "Weight": "41 kg",
+        "BloodType": "A",
+        "ProductionCompany": "765",
+        "Image": "Chihaya.png"
+    },
+    {
+        "RomajiName": "Makoto Kikuchi",
+        "JapaneseName": "菊地真",
+        "Birthday": "August 29th",
+        "Age": 17,
+        "Height": "159 cm",
+        "Weight": "44 kg",
+        "BloodType": "O",
+        "ProductionCompany": "765",
+        "Image": "Makoto.png"
+    },
+    {
+        "RomajiName": "Fuka Toyokawa",
+        "JapaneseName": "豊川風花",
+        "Birthday": "September 2nd",
+        "Age": 17,
+        "Height": "158 cm",
+        "Weight": "51 kg",
+        "BloodType": "O",
+        "ProductionCompany": "765",
+        "Image": "Fuka.png"
+    }
+]
