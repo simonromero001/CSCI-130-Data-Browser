@@ -116,7 +116,7 @@ function nextImage() {
 
 function prevImage() {
     counter--;
-    if (counter > newArr.length - 1) counter = 0;
+    if (counter < 0) counter = newArr.length-1;
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
