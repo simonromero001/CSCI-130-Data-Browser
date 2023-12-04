@@ -1,8 +1,4 @@
 <?php
-function returnJson(){
-    $jsonData = file_get_contents('Idols.json');
-    echo $jsonData;
-}
 function select($index)
 {
     $jsonData = file_get_contents('Idols.json');
@@ -10,6 +6,12 @@ function select($index)
     $result = json_encode($result[$index]);
     echo $result;
 }
+function returnJson()
+{
+    $jsonData = file_get_contents('Idols.json');
+    echo $jsonData;
+}
+
 
 $select = $_GET['getSelect'];
 switch ($select) {
