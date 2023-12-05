@@ -72,6 +72,9 @@ function DisplayIdols() {
                 deleteButton.setAttribute('id', 'delete');
                 nextButton.setAttribute('id', 'next');
                 prevButton.setAttribute('id', 'prev');
+                lastButton.setAttribute('id', 'last');
+                firstButton.setAttribute('id', 'first');
+                saveAllButton.setAttribute('id', 'saveAll');
                 nextButton.type = 'button';
                 prevButton.type = 'button';
                 nextButton.value = 'Next';
@@ -204,6 +207,9 @@ function insert() {
     let div = document.getElementById('hldr');
     let nextButton = document.getElementById('next');
     let prevButton = document.getElementById('prev');
+    let lastButton = document.getElementById('last');
+    let firstButton = document.getElementById('first');
+    let saveAllButton = document.getElementById('saveAll');
     let insertButton = document.getElementById('insert');
     let deleteButton = document.getElementById('delete');
     if (insertButton.innerText === 'Insert') {
@@ -214,6 +220,9 @@ function insert() {
         prevButton.hidden = true;
         editButton.hidden = true;
         deleteButton.hidden = true;
+        lastButton.hidden = true;
+        firstButton.hidden = true;
+        saveAllButton.hidden = true;
 
         insertButton.innerText = 'Exit';
 
@@ -277,6 +286,9 @@ function insert() {
         prevButton.hidden = false;
         editButton.hidden = false;
         deleteButton.hidden = false;
+        lastButton.hidden = false;
+        firstButton.hidden = false;
+        saveAllButton.hidden = false;
         let div = document.getElementById('hldr');
         div.innerHTML = '';
 
@@ -305,6 +317,10 @@ function edit(x) {
     let prevButton = document.getElementById('prev');
     let insertButton = document.getElementById('insert');
     let deleteButton = document.getElementById('delete');
+    let lastButton = document.getElementById('last');
+    let firstButton = document.getElementById('first');
+    let saveAllButton = document.getElementById('saveAll');
+    
     if (editButton.innerText === 'Edit') {
         let saveButton = document.createElement('button');
         saveButton.onclick = function () { save(counter) };
@@ -313,6 +329,9 @@ function edit(x) {
         prevButton.hidden = true;
         insertButton.hidden = true;
         deleteButton.hidden = true;
+        lastButton.hidden = true;
+        firstButton.hidden = true;
+        saveAllButton.hidden = true;
 
         editButton.innerText = 'Exit';
 
@@ -378,6 +397,9 @@ function edit(x) {
         prevButton.hidden = false;
         insertButton.hidden = false;
         deleteButton.hidden = false;
+        lastButton.hidden = false;
+        firstButton.hidden = false;
+        saveAllButton.hidden = false;
         let div = document.getElementById('hldr');
         div.innerHTML = '';
 
