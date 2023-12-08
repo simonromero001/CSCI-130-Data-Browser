@@ -1,22 +1,13 @@
 <?php
-$counterNumber = $_GET['counter'];
+$servername = "localhost";
+$username = "simon";
+$password = "1234";
+$name = "IdolsDB";
 
-// Load and decode JSON data
-$jsonString = file_get_contents('Idols.json');
-$data = json_decode($jsonString, true);
+$conn = new mysqli($servername, $username, $password, $name);
+$getName = $_GET['getName'];
+$query .= "DELETE FROM Idols WHERE romajiname = '$getName';";
 
-// Check if the counter number exists in the array
-if (array_key_exists($counterNumber, $data)) {
-    // Remove the item
-    unset($data[$counterNumber]);
-
-    // Re-index the array
-    $data = array_values($data);
-
-    // Encode the updated data back to JSON
-    $newJsonString = json_encode($data, JSON_PRETTY_PRINT);
-
-    // Save the JSON string back to the file
-    file_put_contents('Idols.json', $newJsonString);
-}
+$conn->multi_query($query);
+$conn->close();
 ?>

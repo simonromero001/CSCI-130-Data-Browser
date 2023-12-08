@@ -1,42 +1,57 @@
 [
     {
+        "RomajiName": "Haruka Amami",
+        "JapaneseName": "天海春香",
+        "Birthday": "April 3rd",
+        "Height": "158 cm",
+        "Weight": "46 kg",
+        "BloodType": "O",
+        "ProductionCompany": 765,
+        "AllStarPro": true,
+        "Image": "Haruka.png"
+    },
+    {
         "RomajiName": "Miki Hoshii",
-        "JapaneseName": "\u661f\u4e95\u7f8e\u5e0c",
+        "JapaneseName": "星井美希",
         "Birthday": " November 23rd",
         "Height": "161 cm",
         "Weight": "45 kg",
         "BloodType": "B",
-        "ProductionCompany": "765",
+        "ProductionCompany": 765,
+        "AllStarPro": true,
         "Image": "Miki.png"
     },
     {
-        "RomajiName": "Simon",
-        "JapaneseName": "\u5982\u6708\u5343\u65e9",
+        "RomajiName": "Chihaya Kisaragi",
+        "JapaneseName": "如月千早",
         "Birthday": "February 25th",
         "Height": "162 cm",
         "Weight": "41 kg",
         "BloodType": "A",
-        "ProductionCompany": "765",
+        "ProductionCompany": 765,
+        "AllStarPro": true,
         "Image": "Chihaya.png"
     },
     {
-        "RomajiName": "Makoto",
-        "JapaneseName": "\u83ca\u5730\u771f",
+        "RomajiName": "Makoto Kikuchi",
+        "JapaneseName": "菊地真",
         "Birthday": "August 29th",
         "Height": "159 cm",
         "Weight": "44 kg",
         "BloodType": "O",
-        "ProductionCompany": "765",
+        "ProductionCompany": 765,
+        "AllStarPro": true,
         "Image": "Makoto.png"
     },
     {
         "RomajiName": "Fuka Toyokawa",
-        "JapaneseName": "\u8c4a\u5ddd\u98a8\u82b1",
+        "JapaneseName": "豊川風花",
         "Birthday": "September 2nd",
         "Height": "158 cm",
         "Weight": "51 kg",
         "BloodType": "O",
-        "ProductionCompany": "765",
+        "ProductionCompany": 765,
+        "AllStarPro": false,
         "Image": "Fuka.png"
     }
 ]

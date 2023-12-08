@@ -1,31 +1,27 @@
 <?php
- $romanjiName = $_GET['getRomanji'];
- $kanjiName = $_GET['getKanji'];
- $birthday = $_GET['getBirthday'];
- $height = $_GET['getHeight'];
- $weight = $_GET['getWeight'];
- $blood = $_GET['getBlood'];
- $production = $_GET['getProduction'];
- $imageName = $_GET['getImageName'];
 
-$jsonString = file_get_contents('Idols.json');
-$data = json_decode($jsonString, true);
+$servername = "localhost";
+$username = "simon";
+$password = "1234";
+$name = "IdolsDB";
 
-$newEntry = array(
-    'RomajiName' => $romanjiName,
-    'JapaneseName' => $kanjiName,
-    'Birthday' => $birthday,
-    'Height' => $height,
-    'Weight' => $weight,
-    'BloodType' => $blood,
-    'ProductionCompany' => $production,
-    'Image' => $imageName
-);
+$conn = new mysqli($servername, $username, $password, $name);
 
-// Append the new entry to the existing data
-array_push($data,$newEntry);
+$romajiName = mysqli_real_escape_string($conn, $_GET['getRomanji']);
+$kanjiName = mysqli_real_escape_string($conn, $_GET['getKanji']);
+$birthday = mysqli_real_escape_string($conn, $_GET['getBirthday']);
+$height = mysqli_real_escape_string($conn, $_GET['getHeight']);
+$weight = mysqli_real_escape_string($conn, $_GET['getWeight']);
+$blood = mysqli_real_escape_string($conn, $_GET['getBlood']);
+$production = mysqli_real_escape_string($conn, $_GET['getProduction']);
+$allStarPro = mysqli_real_escape_string($conn, $_GET['getAllStar']);
+$imageName = mysqli_real_escape_string($conn, $_GET['getImageName']);
 
+//$jsonData = file_get_contents('Idols.json');
+//$idols = json_decode($jsonData, true);
 
-$newJsonString = json_encode($data, JSON_PRETTY_PRINT);
-file_put_contents('Idols.json', $newJsonString);
+$query = "INSERT INTO Idols (romajiname, japanesename, birthday, height, weight, bloodtype, productioncompany, allstarpro ,image) VALUES ('$romajiName', '$kanjiName', '$birthday','$height', '$weight', '$blood', '$production', $allStarPro,'$imageName');";
+
+$conn->query($query);
+$conn->close();
 ?>
